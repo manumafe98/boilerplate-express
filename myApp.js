@@ -18,6 +18,14 @@ app.get('/:word/echo', function(req, res){
     res.json({echo: word})
 })
 
+//Get Query Parameter Input from the Client
+app.get('/name', function(req, res){
+    const firstname = req.query.url.first
+    const lastname = req.query.url.last
+
+    res.json({name: `${firstname} ${lastname}`})
+})
+
 //Implement a Root-Level Request Logger Middleware
 app.use(function (req, res, next){
     console.log(req.method + " " + req.path  + " - "  + req.ip);
