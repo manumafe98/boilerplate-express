@@ -14,8 +14,8 @@ function(req, res){
 
 //Get Route Parameter Input from the Client
 app.get('/:word/echo', function(req, res){
-    var word = req.params.word;
-    res.json(req.params.word)
+    const word = req.params.word;
+    res.json({echo: word})
 })
 
 //Implement a Root-Level Request Logger Middleware
