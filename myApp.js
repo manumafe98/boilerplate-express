@@ -53,10 +53,21 @@ app.get("/json", function(req, res){
 })
 
 
+//Get Data from POST Requests
+app.post('/name', function(req, res){
+    const firstname = req.body.first
+    const lastname = req.body.last
+
+    res.json({name: `${firstname} ${lastname}`})
+}) 
 
 
 
 
+// POST (sometimes PUT) - Create a new resource using the information sent with the request,
+// GET - Read an existing resource without modifying it,
+// PUT or PATCH (sometimes POST) - Update a resource using the data sent,
+// DELETE => Delete a resource.
 
 
 
